@@ -120,7 +120,7 @@ class core_call extends CI_Model
 		// If the method was executed successfully ...
 		if ($rValue) {
 			if($rValue->invoke != FALSE) {
-				log_message('error', 'core_call getFacebookIDs the data : ' . $rValue->data);
+				log_message('error', 'core_call getFacebookIDs the data : ' . print_r($rValue->data,TRUE));
 				// return required data ...
 				return $rValue->data;
 			} else {

@@ -1,3 +1,4 @@
+<?php if($not_interest_cats && count($not_interest_cats)) { ?>
 <div id="catss_not_interest">
 	<table id="new-cat">
 			<tr>
@@ -11,10 +12,6 @@
 				</td>
 			</tr>
 			<?php
-			
-			if(!$not_interest_cats){
-				echo 'No Category';
-			}else{ 
 			$i = 0;
 			 foreach($not_interest_cats as $not_int_cat) {?>
 					<?php if ($i % 2 == 0) {?>
@@ -23,7 +20,7 @@
 								<td>
 			 					<a href="javascript:void(0)" onclick="get_not_interest_category('<?=$not_int_cat->id?>','<?= $not_int_cat->name?>','<?=false?>')">
 									<img class="new-cat-pic"
-									src="<?=base_url()?>/h7-assets/resources/img/main-icons/<?=$not_int_cat->name?>.png"
+									src="<?=base_url()?>/h7-assets/images/categories/<?=$not_int_cat->name?>/main_icon.png"
 									alt="<?=$not_int_cat->name?>-cat" style="margin-left: 15px;">
 								</a>
 								</td>
@@ -31,7 +28,7 @@
 							<td>
 			 				<a href="javascript:void(0)" onclick="get_not_interest_category('<?=$not_int_cat->id?>','<?= $not_int_cat->name?>','<?=false?>')">
 							<img class="new-cat-pic"
-								src="<?=base_url()?>/h7-assets/resources/img/main-icons/<?=$not_int_cat->name?>.png"
+								src="<?=base_url()?>/h7-assets/images/categories/<?=$not_int_cat->name?>/main_icon.png"
 								alt="<?=$not_int_cat->name?>-cat" style="margin-right: 10px;">		
 							</a>
 							</td>
@@ -39,6 +36,7 @@
 						<?php }?>
 				<?php $i ++; 
 			 } 
-			}?>
+			?>
 		</table>
 </div>
+<?php } ?>

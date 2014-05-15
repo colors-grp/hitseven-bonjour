@@ -3,7 +3,6 @@
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1256">
 <title>The Colors Concorrenza</title>
-
 <link type="text/css" rel="stylesheet"
 	href="<?=base_url()?>h7-assets/resources/bootstrap/css/bootstrap.css" />
 <link type="text/css" rel="stylesheet"
@@ -69,7 +68,7 @@
 			// Initialize Slides
 			$('#slides').slides({
 				preload: true,
-				preloadImage: '<?=base_url()?>h7-assets/resources/img/main-icons/loading.gif',
+				//preloadImage: '<?=base_url()?>h7-assets/resources/img/main-icons/loading.gif',
 				generatePagination: true,
 				//play: 5000,
 				//pause: 2500,
@@ -98,7 +97,7 @@
 							src="<?=base_url()?>h7-assets/resources/img/main-icons/green-arrow.png"
 							alt="green-arrow" style="position: relative; top: -22px;"></td>
 						<td style="width: 50px;">
-							<h4>Next Results in</h4>
+							<h4><?=(count($rounds)?$rounds[0]->name:'No Current Rounds')?></h4>
 						</td>
 						<td style="width: 20px;"></td>
 						<td>
@@ -227,7 +226,7 @@
                                                                         log_message('error','mo7eb home_view count($rev_cats)='.  count($rev_cats));
 									foreach ($rev_cats as $cats) {
 										?> <img
-										src="<?=base_url()?>h7-assets/resources/img/categories/<?=$cats->name?>.png"
+										src="<?=base_url()?>h7-assets/images/categories/<?=$cats->name?>/main_icon.png"
 										alt="<?= $cats->name?>-cat" id="<?=$ranks[count($rev_cats) - $i - 1]?>">
 									<?php $i ++;}?>
 									<?php 
@@ -555,7 +554,7 @@
 
 </script>
 <?php
-if ($rounds!=FALSE){
+if ($rounds!=FALSE && count($rounds) > 0){
     foreach($rounds as $row){
         echo "Competition Name: " . $row->name ."<br />Round ID: " . $row->round_id . "<br />";
     }

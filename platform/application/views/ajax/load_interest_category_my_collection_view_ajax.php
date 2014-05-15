@@ -32,8 +32,8 @@
 								 	<font class = "user-score" id = "score-<?=$int_cat->id?>"><?=$int_cat->score?></font>
 								</li>													
 								<li style = "width: 83px; height: 90px;">
-									<img class = "cat-pic" src="<?=base_url()?>/h7-assets/resources/img/main-icons/<?=$int_cat->name?>.png" alt="<?=$int_cat->name?>-cat" >
-									<font class = "cat-name"><?=$int_cat->name?></font>
+									<img class = "cat-pic" src="<?=base_url()?>/h7-assets/images/categories/<?=$int_cat->name?>/main_icon.png" alt="<?=$int_cat->name?>-cat" >
+									<!--  <font class = "cat-name"><?php //$int_cat->name?></font> -->
 								</li>
 								<li style = "height: 90px;">
 									<font id = "rank-text">Cards</font>

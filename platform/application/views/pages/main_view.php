@@ -205,9 +205,12 @@ function get_not_interest_category(cat_id , cat_name ,  to_load){
 	ajaxpage = "<?=base_url() ?>index.php?/category/load_not_interest_category";
 	$.post(ajaxpage, {cat_id : cat_id  ,  to_load :  to_load  })
 	.done(function( data ) {
+		//alert(data);
 		if(data){
 			$('#catss_not_interest').html(data);
-		}	
+		} else {
+			$('#catss_not_interest').hide();
+		}
 	});
 	get_cards(cat_id , cat_name);
 }

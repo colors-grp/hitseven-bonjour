@@ -16,6 +16,7 @@ class Home extends CI_Controller {
                 $this->load->model('round_model');
                 $this->load->model('category_model');
                 $this->load->model('core_call');
+                $this->load->model('scoreboard_model');
 
 		// Facebook connections are banned from Platform ...
 
@@ -51,7 +52,6 @@ class Home extends CI_Controller {
 			log_message('error', 'bevore Sign in acc id == '.$accountid);
 			$this->authentication->sign_in($accountid);
 		}
-		$this->load->model('scoreboard_model');
                 // contains top 3 users for each category
         // Get homepage top 3 ranks with thier facebook IDs
             // Get all categories from db
@@ -77,9 +77,10 @@ class Home extends CI_Controller {
                 //get categories (SORTED)
 		$data['sorted_cats'] = $this->scoreboard_model->get_sorted_cats();
                 //Loading the current round data
-                $data['rounds'] = $this->round_model->getCurrentRounds();
+		log_message('error','mo7eb home index() $sitecode='.$this->config->item('sitecode'));
+                $data['rounds'] = $this->round_model->getCurrentRound($this->config->item('sitecode'));
                 if($data['rounds'] != FALSE)
-                    $data['rounds'] = $this->round_model->getCurrentRounds()->result();
+                    $data['rounds'] = $this->round_model->getCurrentRound($this->config->item('sitecode'))->result();
 		//gonna load the home view anyway ! ...
 		$this->load->view('home_view', $data);
 	}

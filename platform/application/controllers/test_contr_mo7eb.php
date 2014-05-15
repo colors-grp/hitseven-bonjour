@@ -7,15 +7,18 @@ class Test_contr_mo7eb extends CI_Controller {
                 $this->load->model('user_model');
     }
     function index(){
-        $users = array();
-        $query = $this->user_model->get_all_details();
-        foreach($query->result() as $row){
-            array_push($users,$row);
-        }
-        for($i=0;$i<7;$i++){
-            $catName = $this->category_model->get_category_name_by_id($i+1);
-            $this->scoreboard_model->emptyScores($catName);
-            $this->scoreboard_model->dummyUsersWithDummyScores($catName,2000,$users);
-        }
+        /*
+         * adding new users into scoreboards
+         */
+			    	$users = array();
+			        $query = $this->user_model->get_all_details();
+			        foreach($query->result() as $row){
+			            array_push($users,$row);
+			        }
+			        for($i=0;$i<7;$i++){
+			            $catName = $this->category_model->get_category_name_by_id($i+1);
+			            $this->scoreboard_model->emptyScores($catName);
+			            $this->scoreboard_model->dummyUsersWithDummyScores($catName,2000,$users);
+			        }
     }
 }

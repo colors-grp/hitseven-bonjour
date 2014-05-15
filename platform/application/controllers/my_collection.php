@@ -115,7 +115,7 @@ class My_collection extends CI_Controller {
 			$data['my_collection_view']['dashboard'] = $this->get_dashboard_info($user_id, $interset_cats);
                         // Get round dashboard info
                         $this->load->model('round_model');
-                        $_SESSION['cur_round'] = $this->round_model->getCurrentRounds();
+                        $_SESSION['cur_round'] = $this->round_model->getCurrentRound($this->config->item('sitecode'));
                         if($_SESSION['cur_round'] != FALSE){
                             $_SESSION['cur_round'] = $_SESSION['cur_round']->row(0);
                         }

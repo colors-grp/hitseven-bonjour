@@ -183,7 +183,9 @@
             .done(function( data ) {
                     if(data){
                             $('#catss_not_interest_my_collection').html(data);
-                    }	
+                    } else { 
+                    	$('#catss_not_interest_my_collection').hide();
+                    }
             });
             if(!to_load){
                 // Get cards of selected category

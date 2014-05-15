@@ -142,7 +142,7 @@ class Platform extends CI_Controller {
                         }
                         // Get round dashboard info
                         $this->load->model('round_model');
-                        $_SESSION['cur_round'] = $this->round_model->getCurrentRounds();
+                        $_SESSION['cur_round'] = $this->round_model->getCurrentRound($this->config->item('sitecode'));
                         if($_SESSION['cur_round'] != FALSE){
                             $_SESSION['cur_round'] = $_SESSION['cur_round']->row(0);
                         }

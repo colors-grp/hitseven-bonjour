@@ -113,7 +113,7 @@ class Scoreboard extends CI_Controller {
                         // Get dashboard
 			$data['scoreboard_view']['dashboard'] = $this->get_dashboard_info($user_id, $interset_cats);
                         // Get round dashboard info
-                        $_SESSION['cur_round'] = $this->round_model->getCurrentRounds();
+                        $_SESSION['cur_round'] = $this->round_model->getCurrentRound($this->config->item('sitecode'));
                         if($_SESSION['cur_round'] != FALSE){
                             $_SESSION['cur_round'] = $_SESSION['cur_round']->row(0);
                         }
@@ -182,7 +182,13 @@ class Scoreboard extends CI_Controller {
                     $this->load->model('core_call');
                     // Get Current user common friends between facebook and database
                     $friends = json_decode($this->core_call->getCommonFriends($_SESSION['fb_id']));
-                    //log_message('error','mo7eb scoreboard get_scoreboard_details $friends='.  print_r($friends,TRUE));
+                    $obj = new stdClass();
+                    $me = $this->core_call->getMe($_SESSION['user_id']);
+                    $obj->fullname = $me->fullname;
+                    $obj->fb_id = $_SESSION['fb_id'];
+                    $obj->account_id = $_SESSION['user_id'];
+                    array_push($friends,$obj);
+                    log_message('error','mo7eb scoreboard get_scoreboard_details $friends='.  print_r($friends,TRUE));
                     // Create new array with account ids to get thier ranks from database
                     if(count($friends) > 0){
                         $account_ids = array();
@@ -191,6 +197,7 @@ class Scoreboard extends CI_Controller {
                             $account_ids[$i] = $recored->account_id;
                             $i++;
                         }
+                        $account_ids[$i] = $_SESSION['user_id'];
                         // Get scoreboard of friends only Given accounts_ids, $cat_id and limit of rows
                         $cat_name = $this->category_model->get_category_name_by_id($cat_id);
                         $scoreboard = $this->scoreboard_model->get_scoreboard($cat_id, $cat_name , $limit , $account_ids);
