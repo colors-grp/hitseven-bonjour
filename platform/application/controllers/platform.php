@@ -6,6 +6,7 @@ class Platform extends CI_Controller {
 		parent::__construct();
 		$this->CI =& get_instance();
 
+		// This is a new comment 
 		// Load models ...
 		$this->load->model('core_call');
 		$this->load->model('competition_model');
