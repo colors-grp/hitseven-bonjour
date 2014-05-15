@@ -1,0 +1,863 @@
+@CHARSET "windows-1256";
+body{
+/*	background: url('../img/main-icons/background.jpg') no-repeat center top;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+}
+
+#header-container{
+	width:980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#en-icon{
+	margin-top: 9px;
+}
+
+.ar{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	min-width: 42px;
+	margin-right:5px;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+}
+
+.indicator{
+	height: 29px;
+	margin-top: 6px;
+}
+
+#header-pic{
+	width: 30px;
+	height: 30px;
+	border: 1px solid white;
+	border-radius: 2px;
+}
+
+#left-header{
+	float: left;
+	width: 290px;
+	min-height: 700px;
+	margin-left: -15px;
+	background-color: rgba(255, 255, 255, .5);
+	border-right: 4px solid rgba(128, 128, 128, .4);
+}
+
+#logo{
+	width: 235px;
+	height: 553px;
+	position: relative;
+	top: 55px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+.container{
+	width: 980px;
+	background:#ffffff url('../img/main-icons/background.jpg') no-repeat center top;
+	background-size: cover;
+	background-repeat: repeat-y;
+	height: auto;
+}
+
+#profile-pic{
+	position: relative;
+	top: -34px;
+	left: 5px;
+	width: 220px;
+	height: 215px;
+	border: 3px solid #B3B3B3;
+	border-radius: 9px;
+}
+
+#profile{
+	position: relative;
+	top: 11px;
+	width: 237px;
+	height: 368px;
+/*  	background:transparent url('../img/main-icons/userpic.png') no-repeat;  */
+}
+
+#profile-white-background{
+	position: relative;
+	left: 4px;
+	top: 139px;
+	width: 230px;
+	height: 227px;
+	border: 3px solid #68c220;
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+#profile-orange-background{
+	position: relative;
+	left: -3px;
+	top: -101px;
+	width: 230px;
+	height: 227px;
+	border-radius: 25px;
+	background-color: #68c220;
+}
+
+#MyFav-cat{
+	width: 280px;
+	text-align: center;
+	background-color: white;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.cat-pic{
+	margin-top: 4px;
+	height: 85px;
+}
+
+.new-cat-pic{
+	margin-top: 8px;
+	height: 95px;
+}
+
+.circle-pic{
+	margin-top: 9px;
+	margin-left: 16px;
+	margin-right: 16px;
+	height: 65px;
+}
+
+#new-cat{
+	width: 280px;
+	text-align: left;
+	background-color: white;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#pages-bar{
+	position: relative;
+	top: 10px;
+	width: 629px;
+	height: 38px;
+	z-index: 1;
+	border-radius: 9px;
+	background-color: white;
+}
+
+#content{
+	float: right;
+	position: relative;
+	top: 72px;
+	left: -15px;
+	width: 629px;
+}
+
+.arrow{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#Dashboard{
+	position: relative;
+	top: 24px;
+	width: 629px;
+	height: 368px;
+/* 	background:transparent url('../img/main-icons/dashboard_bg.png') no-repeat; 
+	background-color: #ffa800;
+	border-radius: 25px;*/
+}
+
+#Orange-Background{
+	width: 629px;
+	height: 316px;
+	background-color: #68c220;
+	border-radius: 25px;
+}
+
+#White-Background{
+	position: relative;
+	top: 2px;
+	left: 6px;
+	width: 618px;
+	height: 321px;
+	background-color: white;
+	border: 3px solid rgb(207, 200, 200);
+	border-radius: 25px;
+}
+
+#counter{
+	position: relative;
+	left: 16px;
+	top: 16px;
+}
+
+#score{
+	float: left;
+	position: relative;
+	left: 31px;
+	top: 34px;
+	text-align: center;
+}
+
+.right-border-grey{
+	background-color: rgb(243, 243, 243);
+	box-shadow: 3px 0px 2px -1px #E4E4E4;
+}
+
+.left-border-grey{
+	background-color: rgb(243, 243, 243);
+	box-shadow: -2px 0px 1px 0px #E4E4E4
+}
+
+.triangle_up{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	border-bottom: 10px solid #68c220;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	content: "";
+}
+.triangle_down{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	border-top: 10px solid #ff0000;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	content: "";
+}
+.triangle_unchanged{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	border-bottom: 10px solid #0000ff;
+	border-up: 10px solid #0000ff;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	content: "";
+}
+
+#rank{
+	float: right;
+	position: relative;
+	top: 34px;
+	left: -33px;
+	text-align: center;
+	display: block;
+	height: 156px;
+}
+
+#rank-body::-webkit-scrollbar { 
+    display: none; 
+}
+
+#rank-body{
+	display: block;
+	height: 136px;
+	overflow-y: scroll;
+}
+
+.cat-rank{
+	width: 37px;
+	position: relative;
+	left: 10px;
+}
+
+.rank-text{
+	position: relative;
+	left: -23px;
+	font-size: 13px;
+}
+
+#buttons{
+	position: relative;
+	top: 63px;
+	left: 432px;
+	z-index: 1;
+	height: 35px;
+	text-align: center;
+}
+
+#cards{
+	position: relative;
+	top: 55px;
+	width: 629px;
+	background-color: white;
+}
+
+.card-holder{
+	width: 167px;
+	height: 215px;
+	background-color: #ECECEC;
+	border: 2px solid #68c220;
+	border-radius: 7px;
+	position: relative;
+	top: 27px;
+}
+
+.card-pic{
+	position: relative;
+	top: -21px;
+	width: 163px;
+	height: 191px;
+	border: 2px solid white;
+	border-radius: 7px;
+}
+
+.card-name{
+	position: relative;
+	top: 0px;
+	left: -40px;
+}
+
+hr{
+	display: block;
+	height: 1px;
+	width: 153px;
+	border: 0;
+	border-top: 2px solid #68c220;
+	margin: 0.2em 0 0em 0;
+	padding: 0;
+	position: relative;
+	left: 1px;
+	top: 1px;
+}
+
+.score-name{
+	text-align: left;
+	border: 2px dashed #CECECE;
+	background-color: #ECECEC;
+	height: 36px;
+	padding-left: 10px;
+}
+
+.score-td{
+	border: 2px dashed #CECECE;
+	background-color: #ECECEC;
+}
+
+.score-profile-pic{
+	width: 70px;
+	height: 70px;
+}
+
+#rank-table{
+	width: 629px;
+	text-align: center;
+}
+
+#rank-head{
+	height: 30px;
+	color: white;
+	background-color: #B3B3B3;
+}
+
+.first-col{
+	border-right: 1px solid white;
+}
+
+.odd-row{
+	background-color: #ECECEC;
+	height: 30px;
+}
+
+.even-row{
+	background-color: #F7F7F7;
+	height: 30px;
+}
+
+#category-cards{
+	float: left;
+	width: 180px;
+	background-color: white;
+	position: relative;
+	top: 12px;
+	text-align: center
+}
+
+.card-holder-small{
+	margin-left: 44px;
+	width: 90px;
+	height: 90px;
+	background-color: #ECECEC;
+	border: 2px solid #68c220;
+	border-radius: 7px;
+	position: relative;
+	top: 10px;
+}
+
+.card-pic-small{
+	position: relative;
+	top: -21px;
+	width: 86px;
+	height: 90px;
+	border: 2px solid white;
+	border-radius: 7px;
+}
+
+#card-details{
+	float: right;
+	width: 629px;
+	min-height: 630px;
+	background-color: white;
+	position: relative;
+	top: 55px;
+}
+
+#card-details-table{
+	width: 430px;
+	background-color: white;
+	position: relative;
+	top: -60px;
+	left: -10px;
+	text-align: center;
+	color: white;
+}
+
+#card-details-background{
+	background-color: #68c220;
+	width: 130px;
+	height: 40px;
+	margin-left: 7px;
+	border-radius: 3px;
+	text-align: center;
+	position: relative;
+	top: 2px;
+	padding-top: 8px;
+	font-size: 16px;
+}
+
+#card-photos{
+	background-color: white;
+	width: 410px;
+	position: relative;
+	top: -45px;
+}
+
+.photo-padding{
+	padding-top: 10px;
+}
+
+#card-videos{
+	background-color: white;
+	width: 410px;
+	position: relative;
+	margin-bottom: 45px;
+}
+
+#card-music{
+	background-color: white;
+	width: 410px;
+	position: relative;
+	margin-bottom: 45px;
+}
+
+#card-game{
+	background-color: white;
+	width: 410px;
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.card-elements{
+	position: relative;
+	top: -193px;
+	left: 6px;
+	width: 100px;
+}
+
+.trade-button{
+	position: relative;
+	top: -178px;
+	left: 36px;
+	width: 40px;
+}
+
+.grid-card-points{
+	position: relative;
+	top: -126px;
+	left: -23px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.grid-card-coins{
+	position: relative;
+	top: -139px;
+	left: -4px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#points-image{
+	position: relative;
+	left: 19px;
+	top: 20px;
+/* 	color: #7E7E7E; */
+}
+
+.cat-name{
+	position: relative;
+	top: -55px;
+/* 	left: 24px; */
+	color: #727272;
+}
+
+.new-cat-name{
+	position: relative;
+	left: -52px;
+	top: 3px;
+}
+
+#add-cat{
+	position: relative;
+	left: -61px;
+	top: 3px;
+	width: 21px;
+}
+
+.right-line{
+	height: 4px;
+	width: 19px;
+	background-color: #ECECEC;
+	position: relative;
+	top: -5px;
+	left: -3px;
+}
+
+.left-line{
+	height: 4px;
+	width: 19px;
+	background-color: #ECECEC;
+	position: relative;
+	top: -35px;
+	left: 79px;
+}
+
+#right_panel{
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 115px;
+}
+
+#left_panel{
+	float: left;
+	width: 170px;
+}
+
+#my-fav-cat-header{
+	text-align: left;
+}
+
+#score-text{
+	position: relative;
+	top: -55px;
+	left: 2px;
+}
+
+#rank-text{
+	position: relative;
+	top: 27px;
+	left: 2px;
+}
+
+.user-score{
+	font-size: 12px;
+	position: relative;
+	top: -57px;
+	font-size: 20px;
+	color: #68a220;
+}
+
+.user-rank{
+	z-index: 1;
+	position: relative;
+	top: 22px;
+	font-size: 20px;
+	color: #68a220;
+}
+.popup-container{
+	width: 950px;
+	height: 458px;
+	background-color: white;
+}
+
+#game-content{
+	float: left;
+	width: 689px;
+	height: 458px;
+	background-color: white;
+}
+
+#How-to-play{
+	width: 260px;
+	position: relative;
+	top: 40px;
+	left: 50px;
+	font-size: 17px;
+}
+
+#How-to-play td{
+	border-top:4px solid #68c220;
+	padding: 10px 10px;
+}
+
+#game-intro{
+	position: relative;
+	top: 65px;
+	left: 100px;
+	font-size: 17px;
+	width: 580px;
+}
+
+#right-bar{
+	float: right;
+	width: 261px;
+	height: 398px;
+	border-left: 4px solid #68c220;
+	position: relative;
+	top: 30px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.play-button{
+	position: relative;
+	top: 125px;
+	width: 158px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #68c220;
+	font-size: 22px;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#button-text{
+	margin-left: 53px;
+	margin-top: 49px;
+	position: relative;
+	top: 8px;
+}
+
+.card-holder-popup {
+	margin-left: 44px;
+	width: 90px;
+	height: 80px;
+	background-color: #ECECEC;
+	border: 2px solid #68c220;
+	border-radius: 7px;
+	position: relative;
+	top: 10px;
+}
+
+.card-pic-popup {
+	position: relative;
+	top: -21px;
+	width: 86px;
+	height: 80px;
+	border: 2px solid white;
+	border-radius: 7px;
+}
+
+#Q-score-table{
+	width: 500px;
+	height: 100px;
+	position: relative;
+	top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.red-circle{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: rgb(254, 0, 0);
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 22px;
+}
+
+.green-circle{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #68c220;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 22px;
+}
+
+.Q-score{
+	position: relative;
+	top: 28px;
+	left: -1px;
+}
+
+#final-score-title{
+	color: #68c220;
+	position: relative;
+	top: 50px;
+	font-size: 35px;
+}
+
+#total-score{
+	color: #68c220;
+	position: relative;
+	top: 55px;
+	font-size: 48px;
+}
+
+#Q-number{
+	width: 220px;
+	position: relative;
+	top: 65px;
+	left: 50px;
+	font-size: 17px;
+}
+
+#Q-number td{
+	border-top:4px solid #68c220;
+	padding: 10px 10px;
+}
+
+#correct-ans{
+	color: #68c220;
+	position: relative;
+	top: 50px;
+}
+
+#wrong-ans{
+	color: rgb(254, 0, 0);
+	position: relative;
+	top: 50px;
+}
+
+#ans-text{
+	font-size: 17px;
+	position: relative;
+	top: 50px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.empty-circle{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	border: 2px solid #68c220;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 22px;
+}
+
+.Ques{
+	position: relative;
+	top: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	font-size: 16px;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+label {
+/*     display:block; */
+    padding-left:30px;
+    background: url('../img/main-icons/unchecked.jpg') left center no-repeat;
+}
+
+input[type="radio"]:checked + label {
+    background: url('../img/main-icons/checked.jpg') left center no-repeat;
+}
+
+.card-list{
+	width: 304px;
+	height: 138px;
+	background-color: white;
+	border: 4px solid #68c220;
+	border-radius: 7px;
+	margin-top: 8px;
+	margin-bottom: 7px;
+	margin-left: 5px;
+}
+
+.card-holder-list {
+	width: 90px;
+	height: 90px;
+	background-color: #ECECEC;
+	border: 2px solid #68c220;
+	border-radius: 7px;
+/*	position: relative;
+	top: 28px;
+	left: 10px;*/
+	float: left;
+}
+
+.card-list-details{
+	float: right;
+	width: 171px;
+	position: relative;
+	top: 10px;
+	margin-right: 11px;
+}
+
+.media-div{
+	height: 23px;
+	width: 65px;
+	color: white;
+	background-color: #68c220;
+	text-align: center;
+	font-size: 15px;
+	border-radius: 4px;
+	padding-top: 1px;
+	margin-right: -12px;
+}
+
+.Games-div{
+	height: 23px;
+	width: 65px;
+	color: white;
+	background-color: rgb(6, 142, 223);
+	text-align: center;
+	font-size: 15px;
+	border-radius: 4px;
+	padding-top: 1px;
+	margin-right: -12px;	
+}
+
+.card-list-points{
+	color: #68c220;
+	position: relative;
+	top: -86px;
+	font-weight: bold;
+}
+
+.list-trade-button{
+   z-index: 1;
+    position: relative;
+    top: -95px;
+    left: 16.5px;
+    width: 52px; 
+}
