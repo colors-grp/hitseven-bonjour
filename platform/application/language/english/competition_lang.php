@@ -1,5 +1,5 @@
 <?php
-
-$lang['my_collection'] = 'MY COLLECTION';
-$lang['scoreboard'] = 'SCOREBOARD';
-$lang['market'] = 'MARKET';
+$lang['MY_COLLECTION'] = 'MY COLLECTION';
+$lang['SCOREBOARD'] = 'SCOREBOARD';
+$lang['SCOREBOARDS'] = 'SCOREBOARDS';
+$lang['MARKET'] = 'MARKET';

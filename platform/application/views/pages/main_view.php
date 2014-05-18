@@ -1,4 +1,9 @@
-
+<?php 
+$this->lang->load('market',$_SESSION['language']);
+$this->lang->load('competition',$_SESSION['language']);
+$this->lang->load('view',$_SESSION['language']);
+$this->lang->load('card',$_SESSION['language']);
+?>
 <!-- Container -->
 <div class="container" id="My-container">
 	<!-- Left Header -->
@@ -20,11 +25,11 @@
 						<div id="points-image">
 							<img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/points_icon.png"
-								alt=""> <font id="user_points"><?= $user_points?> </font> Points
+								alt=""> <font id="user_points"><?= $user_points?> </font> <?=$this->lang->line('Points');?>
 							<br /> <img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/arrow_icon.png"
 								alt=""> <a id="getPointsButton" href="#"
-								style="text-decoration: none;">Get More Points</a>
+								style="text-decoration: none;"><?=$this->lang->line('GetMorePoints');?></a>
 						</div>
                                                 <?php } ?>
 					</div>
@@ -52,19 +57,19 @@
 					<tr>
 						<td style="width: 158px;"><a
 							href="<?=base_url()?>index.php?/platform/index"
-							style="text-decoration: none;"><h4>MARKET</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MARKET');?></h4> </a></td>
 						<td><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a
 							href="<?=base_url()?>index.php?/my_collection/get_my_collection"
-							style="text-decoration: none;"><h4>MY COLLECTION</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MY_COLLECTION');?></h4> </a></td>
 						<td><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a
 							href="<?=base_url()?>index.php?/scoreboard/index"
-							style="text-decoration: none;"><h4>SCOREBOARDS</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('SCOREBOARDS');?></h4> </a></td>
 					</tr>
 				</table>
 			</div>
@@ -93,14 +98,14 @@
 					<h4>
 						<img class="arrow"
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/green-arrow.png"
-							alt="green-arrow">Cards <a href="javascript:void(0);"
+							alt="green-arrow"><?=$this->lang->line('Cards');?> <a href="javascript:void(0);"
 							onclick="get_cards(-1,-1);"
 							style="text-decoration: none; margin-left: 353px; margin-right: 10px;"><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/list_icon.png"
-							alt="list"> LIST</a> <a href="javascript:void(0);"
+							alt="list"> <?=$this->lang->line('LIST');?></a> <a href="javascript:void(0);"
 							onclick="get_cards_grid_view();" style="text-decoration: none;"><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/grid_icon.png"
-							alt="grid"> GRID</a>
+							alt="grid"> <?=$this->lang->line('GRID');?></a>
 					</h4>
 				</td>
 
@@ -249,6 +254,6 @@ function load_dashboard(cat_id){
 </script>
 <script type="text/javascript">
     function my_collection(cur_card_id){
-        document.location = "http://gloryette.org/bonjour_april/index.php?/my_collection/get_my_collection/?cur_card_id=" + cur_card_id;
+        document.location = "<?=base_url() ?>index.php?/my_collection/get_my_collection/?cur_card_id=" + cur_card_id;
     }
 </script>

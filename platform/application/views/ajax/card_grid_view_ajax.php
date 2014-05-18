@@ -1,3 +1,6 @@
+<?php
+$this->lang->load('market',$_SESSION['language']);
+?>
 <!-- Cards -->
 
 <div id="list_view">
@@ -71,10 +74,10 @@
                                                         alt="" width="40" height="41">
                                                             <?php }?>
 					</a> <font color="#68c220" class="grid-card-points"><?= $card->score ?>
-							Points</font>
+							<?=$this->lang->line('Points');?></font>
                                                         <?php if($card->price != 0) { ?>
                                                         <br /> <font color="#68c220" class="grid-card-coins"><?= $card->price ?>
-							Hit Coins</font>
+							<?=$this->lang->line('Hit_Coins');?></font>
                                                         <?php } ?>
 				
 				</div>

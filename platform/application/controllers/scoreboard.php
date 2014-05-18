@@ -141,6 +141,7 @@ class Scoreboard extends CI_Controller {
             }
         //Get current seleced category from session to load its scoreboard
             $cat_id = $_SESSION['current_category_id'];
+            $_SESSION['current_category_name'] = $cat_name = $this->category_model->get_category_name_by_id($cat_id);
         //Get scoreboard contents according to current category
             $scoreboard = FALSE;
             $ret = FALSE;
@@ -149,7 +150,6 @@ class Scoreboard extends CI_Controller {
             // Get Scoreboard rows using $cat_id and limit
                 $limit = 20;
                 if($all){// get all players scoreboard
-                    $cat_name = $this->category_model->get_category_name_by_id($cat_id);
                     $scoreboard = $this->scoreboard_model->get_scoreboard($cat_id, $cat_name , $limit);
                 //Get all ranks according to ranks in the selected category
                     $i = 0;

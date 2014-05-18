@@ -30,6 +30,7 @@ class Home extends CI_Controller {
 		maintain_ssl();
 
 		$accountid = $this->input->get('accountid');
+		$_SESSION['language'] = 'english';
 
 		// If the user is signed in ...
 		if ($this->authentication->is_signed_in())

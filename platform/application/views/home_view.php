@@ -1,8 +1,14 @@
+<?php
+$this->lang->load('general',$_SESSION['language']);
+$this->lang->load('date',$_SESSION['language']);
+$this->lang->load('home',$_SESSION['language']);
+$this->lang->load('score',$_SESSION['language']);
+ ?>
 <html>
 <head>
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1256">
-<title>The Colors Concorrenza</title>
+<title><?=$this->lang->line('website_title');?></title>
 <link type="text/css" rel="stylesheet"
 	href="<?=base_url()?>h7-assets/resources/bootstrap/css/bootstrap.css" />
 <link type="text/css" rel="stylesheet"
@@ -241,10 +247,8 @@
 								</td>
 							</tr>
 						</table>
-						<h3 style="margin: 0px auto; margin-top: -245px; width: 500px;">Play
-							and collect cards for your favorite color</h3>
-						<h3 style="margin: 10px auto; width: 300px;">Get the best score
-							and win</h3>
+						<h3 style="margin: 0px auto; margin-top: -245px; width: 500px;"><?=$this->lang->line('PlayAndCollectCards');?></h3>
+						<h3 style="margin: 10px auto; width: 300px;"><?=$this->lang->line('GetBestScore');?></h3>
 					</div>
 				</div>
 				<div class="slide" id="slide-div2">
@@ -254,7 +258,7 @@
 								src="<?=base_url()?>h7-assets/resources/img/main-icons/gold_medal.png"
 								id="medal-img">
 							<h2 style="position: relative; top: -35px; left: 35px;"
-								class="gold-reflected">GOLD WINNERS</h2>
+								class="gold-reflected"><?=$this->lang->line('GOLDWINNERS');?></h2>
 						</div>
 						<div id="top-table">
 							<?php 
@@ -336,7 +340,7 @@
 								}
 							}
 							 else  {?>
-							<font>No Users in this Category</font>
+							<font><?=$this->lang->line('NoUsersinthisCategory');?></font>
 							<?php }?>
 						</div>
 					</div>
@@ -348,7 +352,7 @@
 								src="<?=base_url()?>h7-assets/resources/img/main-icons/silver_medal.png"
 								id="medal-img">
 							<h2 style="position: relative; top: -35px; left: 35px;"
-								class="silver-reflected">SILVER WINNERS</h2>
+								class="silver-reflected"><?=$this->lang->line('SILVERWINNERS');?></h2>
 						</div>
 						<div id="top-table">
 							<?php 
@@ -429,7 +433,7 @@
 								}
 							}
 							 else  {?>
-							<font>No Users in this Category</font>
+							<font><?=$this->lang->line('NoUsersinthisCategory');?></font>
 							<?php }?>
 						</div>
 					</div>
@@ -441,7 +445,7 @@
 								src="<?=base_url()?>h7-assets/resources/img/main-icons/bronze_medal.png"
 								id="medal-img">
 							<h2 style="position: relative; top: -35px; left: 35px;"
-								class="bronze-reflected">BRONZE WINNERS</h2>
+								class="bronze-reflected"><?=$this->lang->line('BRONZEWINNERS');?></h2>
 						</div>
 						<div id="top-table">
 							<?php 
@@ -522,7 +526,7 @@
 								}
 							}
 							 else  {?>
-							<font>No Users in this Category</font>
+							<font><?=$this->lang->line('NoUsersinthisCategory');?></font>
 							<?php }?>
 						</div>
 					</div>
@@ -535,9 +539,31 @@
 		src="<?=base_url()?>h7-assets/resources/js/kinetic.js"></script>
 	<script type="text/javascript"
 		src="<?=base_url()?>h7-assets/resources/js/jquery.final-countdown-home.js"></script>
-         <?php if ($rounds==FALSE) {$rounds[0]->start_date = 0;$rounds[0]->end_date = 0;$rounds[0]->now = 0;} ?>
+         <?php if ($rounds==FALSE) {$rounds[0]->start_date = $rounds[0]->end_date = $rounds[0]->now = 0;} ?>
 	<script type="text/javascript">
-	$('.countdown').final_countdown({start: <?=$rounds[0]->start_date?>, end: <?=$rounds[0]->end_date?>, now: <?=$rounds[0]->now?>});
+	$('.countdown').final_countdown({start: <?=$rounds[0]->start_date;?>, end: <?=$rounds[0]->end_date;?>, now: <?=$rounds[0]->now;?>});
+	/*
+	var date = new Date(<?//=$rounds[0]->start_date;?>*1000);
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var seconds = date.getSeconds();
+	var formattedTimeStart = hours + ':' + minutes + ':' + seconds;
+
+	date = new Date(<?//=$rounds[0]->end_date;?>*1000);
+	hours = date.getHours();
+	minutes = date.getMinutes();
+	seconds = date.getSeconds();
+	var formattedTimeEnd = hours + ':' + minutes + ':' + seconds;
+
+	date = new Date(<?//=$rounds[0]->now;?>*1000);
+	hours = date.getHours();
+	minutes = date.getMinutes();
+	seconds = date.getSeconds();
+	var formattedTimeNow = hours + ':' + minutes + ':' + seconds;
+
+	alert('Start = '+<?//=$rounds[0]->start_date;?>+'\nEnd = '+<?//=$rounds[0]->end_date;?>+'\nNow = '+<?//=$rounds[0]->now;?>);
+	alert('Start = '+formattedTimeStart+'\nEnd = '+formattedTimeEnd+'\nNow = '+formattedTimeNow);
+	*/
 </script>
 	<script type="text/javascript">
 

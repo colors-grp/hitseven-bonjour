@@ -1,3 +1,8 @@
+<?php 
+$this->lang->load('category',$_SESSION['language']);
+$this->lang->load('card',$_SESSION['language']);
+$this->lang->load('score',$_SESSION['language']);
+?>
 <div id="cat_interest">
 		<table id="MyFav-cat">
 			<tr id = "my-fav-cat-header">
@@ -6,7 +11,7 @@
 					<h4>
 						<img class="arrow"
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/green-arrow.png"
-							alt="green-arrow">My Favorite Categories
+							alt="green-arrow"><?=$this->lang->line('My_Favorite_Categories');?>
 					</h4>
 				</td>
 			</tr>
@@ -33,7 +38,7 @@
 								<li style = "height: 90px;">
 									<img class = "circle-pic" src="<?=base_url()?>/h7-assets/resources/img/main-icons/score_icon.png" alt="circle"  style = "margin-top:13px;">
 								 	<div class = "left-line"></div>
-								 	<font id = "score-text">Score</font>
+								 	<font id = "score-text"><?=$this->lang->line('Score');?></font>
 								 	<br />
 								 	<font class = "user-score" id = "score-<?=$int_cat->id?>"><?=$int_cat->score?></font>
 								</li>													
@@ -42,7 +47,7 @@
 									<!--  <font class = "cat-name"><?php //$int_cat->name?></font> -->
 								</li>
 								<li style = "height: 90px;">
-									<font id = "rank-text">Cards</font>
+									<font id = "rank-text"><?=$this->lang->line('Cards');?></font>
 									<br />
 									<font class = "user-rank"><?=$int_cat->num_of_cards?>/<?=$total_cards[$i]?></font>
 								 	<div class = "right-line"></div>
@@ -57,7 +62,7 @@
 			} else { ?>
 					<tr>
 						<td>
-							<h3>No Categories</h3>
+							<h3><?=$this->lang->line('No_Categories');?></h3>
 						</td>
 					</tr>
 			<?php } ?>

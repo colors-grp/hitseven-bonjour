@@ -1,3 +1,7 @@
+<?php 
+$this->lang->load('card',$_SESSION['language']);
+$this->lang->load('market',$_SESSION['language']);
+?>
 <!-- Cards -->
 <div id="list_view">
 	<table id="cards" style="text-align: left;">
@@ -33,12 +37,12 @@
                                             <?php if( $card->price != 0 ) { ?>
 							<h6 align="center" class="card-list-points">
 								<?= $card->price ?>
-								Hit Points
+								<?=$this->lang->line('Hit_Coins');?>
 							</h6>
                                             <?php } else { ?>
                                                        <h6 align="center" class="card-list-points">
                                                                 <?= $card->score ?>
-                                                                Points
+                                                                <?=$this->lang->line('Points');?>
 							</h6>
                                             <?php } ?>
 						</div>
@@ -52,21 +56,22 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<div class="media-div">Media</div>
+								<div class="media-div"><?=$this->lang->line('Media');?></div>
 							</td>
-                                                        <?php if($images[$card->id-1] != FALSE){ ?>
+                                                        <?php //log_message('error','mo7eb card_list_view_ajax $videos='.print_r($audios,TRUE));
+                                                        if($images[$j] != FALSE){ ?>
 							<td><img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/cards_photo.png"
                                                                 width="20">
 							</td>
                                                         <?php } else { $rest++; } 
-                                                              if($audios[$card->id-1] != FALSE){ ?>
+                                                              if($audios[$j] != FALSE){ ?>
 							<td><img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/cards_music.png"
                                                                 width="20">
 							</td>
                                                         <?php } else { $rest++; } 
-                                                              if($videos[$card->id-1] != FALSE){ ?>
+                                                              if($videos[$j] != FALSE){ ?>
 							<td><img
                                                                 src="<?=base_url()?>/h7-assets/resources/img/main-icons/cards_video.png"
                                                                 width="20">
@@ -82,9 +87,9 @@
 						<tr style="height: 10px;"></tr>
 						<tr>
 							<td colspan="2">
-								<div class="Games-div">Games</div>
+								<div class="Games-div"><?=$this->lang->line('Games');?></div>
 							</td>
-							<?php if($games[$card->id-1] != FALSE) {?>
+							<?php if($games[$j] != FALSE) {?>
 							<td><img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/cards_games.png"
 								width="20">

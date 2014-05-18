@@ -1,4 +1,9 @@
 <?php if($not_interest_cats && count($not_interest_cats)) { ?>
+<?php 
+$this->lang->load('category',$_SESSION['language']);
+$this->lang->load('card',$_SESSION['language']);
+$this->lang->load('score',$_SESSION['language']);
+?>
 <table id="new-cat">
 	<tr>
 		<td colspan="3"
@@ -6,7 +11,7 @@
 			<h4>
 				<img class="arrow"
 					src="<?=base_url()?>/h7-assets/resources/img/main-icons/pink-arrow.png"
-					alt="purple-arrow">Categories
+					alt="purple-arrow"><?=$this->lang->line('Categories');?>
 			</h4>
 		</td>
 	</tr>

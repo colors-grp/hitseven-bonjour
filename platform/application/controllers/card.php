@@ -69,10 +69,12 @@ class Card extends CI_Controller {
                             $info['images'][$i] = $info['audios'][$i] = $info['videos'][$i] = $info['games'][$i] = FALSE;
                             $info['images'][$i] = (directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card->id.'/image/')!=FALSE ? TRUE : FALSE);
                             $info['audios'][$i] = (directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card->id.'/audio/')!=FALSE ? TRUE : FALSE);
-                            $info['videos'][$i] = (is_array(directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card->id.'/video/'))!=FALSE ? TRUE : FALSE);
+                            $info['videos'][$i] = (directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card->id.'/video/')!=FALSE ? TRUE : FALSE);
+                            //log_message('error','mo7eb card get_card_list_view $audios['.$i.']='.print_r(directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card->id.'/audio/'),TRUE));
                             $info['games'][$i] = $this->game_model->checkAnyGames($cat_id, $card->id);
                             $i++;
                         }
+            //log_message('error','mo7eb card get_card_list_view $audios='.print_r($info['audios'],TRUE));
 			// Load Card List View
 			$this->load->view('ajax/card_list_view_ajax', $info);
 		} else {

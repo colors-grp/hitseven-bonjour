@@ -1,4 +1,7 @@
-
+<?php 
+$this->lang->load('competition',$_SESSION['language']);
+$this->lang->load('market',$_SESSION['language']);
+?>
 <!-- Container -->
 <div class="container" id="My-container">
 	<!-- Left Header -->
@@ -20,11 +23,11 @@
 						<div id="points-image">
 							<img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/points_icon.png"
-								alt=""> <font id="user_points"><?= $user_points?> </font> Points
+								alt=""> <font id="user_points"><?= $user_points?> </font><?=$this->lang->line('Points');?> 
 							<br /> <img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/arrow_icon.png"
 								alt=""> <a id="getPointsButton" href="#"
-								style="text-decoration: none;">Get More Points</a>
+								style="text-decoration: none;"><?=$this->lang->line('GetMorePoints');?></a>
 						</div>
                                                 <?php } ?>
 					</div>
@@ -52,19 +55,19 @@
 					<tr>
 						<td style="width: 158px;"><a
 							href="<?=base_url()?>index.php?/platform/index"
-							style="text-decoration: none;"><h4>MARKET</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MARKET');?></h4> </a></td>
 						<td><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a
 							href="<?=base_url()?>index.php?/my_collection/get_my_collection"
-							style="text-decoration: none;"><h4>MY COLLECTION</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MY_COLLECTION');?></h4> </a></td>
 						<td><img
 							src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a
 							href="<?=base_url()?>index.php?/scoreboard/index"
-							style="text-decoration: none;"><h4>SCOREBOARDS</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('SCOREBOARDS');?></h4> </a></td>
 					</tr>
 				</table>
 			</div>

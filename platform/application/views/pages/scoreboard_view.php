@@ -1,4 +1,9 @@
+<?php 
+$this->lang->load('competition',$_SESSION['language']);
+$this->lang->load('market',$_SESSION['language']);
+$this->lang->load('card',$_SESSION['language']);
 
+?>
 <!-- Container -->
 <div class="container"  id = "My-container">
 	<!-- Left Header -->
@@ -22,10 +27,10 @@
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/points_icon.png"
 								alt="">
 							<font id = "user_points"><?= $user_points?></font>
-							Points <br /> <img
+							<?=$this->lang->line('Points');?> <br /> <img
 								src="<?=base_url()?>/h7-assets/resources/img/main-icons/arrow_icon.png"
 								alt=""> <a id="getPointsButton" href="#"
-								style="text-decoration: none;">Get More Points</a>
+								style="text-decoration: none;"><?=$this->lang->line('GetMorePoints');?></a>
 						</div>
                                                 <?php } ?>
 					</div>
@@ -56,15 +61,15 @@
 				<table style="margin-left: 25px; text-align: center;">
 					<tr>
 						<td style="width: 158px;"><a href="<?=base_url()?>index.php?/platform/index"
-							style="text-decoration: none;"><h4>MARKET</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MARKET');?></h4> </a></td>
 						<td><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a href="<?=base_url()?>index.php?/my_collection/get_my_collection"
-							style="text-decoration: none;"><h4>MY COLLECTION</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('MY_COLLECTION');?></h4> </a></td>
 						<td><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/separator.png"
 							alt="separator"></td>
 						<td style="width: 200px;"><a href="<?=base_url()?>index.php?/scoreboard/index"
-							style="text-decoration: none;"><h4>SCOREBOARDS</h4> </a></td>
+							style="text-decoration: none;"><h4><?=$this->lang->line('SCOREBOARDS');?></h4> </a></td>
 					</tr>
 				</table>
 			</div>
@@ -89,20 +94,20 @@
                             <tr style = "height: 45px;">
                                     <td style = "border-top:8px solid #ffa800; box-shadow: 0 2px 2px -1px gray;">
                                             <h4>
-                                                    <img class = "arrow" src="<?=base_url()?>/h7-assets/resources/img/main-icons/orange-arrow.png" alt="orange-arrow">Cards
+                                                    <img class = "arrow" src="<?=base_url()?>/h7-assets/resources/img/main-icons/orange-arrow.png" alt="orange-arrow"><?=$this->lang->line('SCORES');?>
                                                     <a href="javascript:void(0);" onclick="scoreboard(<?=$_SESSION['current_category_id']?>, 0);return false;" style = "text-decoration: none; margin-left: 280px;margin-right: 10px">
                                                             <img style = "height: 25px;" src = "<?=base_url()?>/h7-assets/resources/img/main-icons/friends_icon.png" alt = "friends">
-                                                            <font style = "font-size: 14px"> FRIENDS </font>
+                                                            <font style = "font-size: 14px"><?=$this->lang->line('FRIENDS');?>  </font>
                                                     </a>
                                                     <a href="javascript:void(0);" onclick="scoreboard(<?=$_SESSION['current_category_id']?>, 1);return false;" style = "text-decoration: none;">
                                                             <img style = "height: 25px;" src = "<?=base_url()?>/h7-assets/resources/img/main-icons/all_icons.png" alt = "all">
-                                                            <font style = "font-size: 14px"> ALL PLAYERS</font>
+                                                            <font style = "font-size: 14px"><?=$this->lang->line('ALL_PLAYERS');?></font>
                                                     </a>
                                             </h4>
                                     </td>
                             </tr>
                             <tr style = "height: 20px;" ></tr>
-                    </table>
+					</table>
 		</div>
 		<!-- End of cards -->
 	</div>
@@ -233,13 +238,13 @@ function scoreboard(cat_id, all){
         //$('#cards').append('Please Wait ...');
         $.post(ajaxpage , {all : all})
         .done(function( data ) {
-                        $('#cards').append(data);
+                        $('#cards').html(data);
         });
     } else {
-        $('#ranks_table_div').html('Please Wait ...');
+        $('#cards').append('Please Wait ...');
         $.post(ajaxpage , { all : all })
         .done(function( data ) {
-                        $('#ranks_table_div').html(data);
+                        $('#cards').html(data);
         });
     }
     //Load new category name

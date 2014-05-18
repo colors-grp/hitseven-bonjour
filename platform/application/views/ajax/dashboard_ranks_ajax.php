@@ -1,13 +1,18 @@
+<?php 
+$this->lang->load('category',$_SESSION['language']);
+$this->lang->load('dashboard',$_SESSION['language']);
+$this->lang->load('score',$_SESSION['language']);
+?>
 <table id = "score">
     <tr style = "border-bottom:6px solid #68c220;font-size: 13px;font-weight: bold;">
-        <td style = "width: 170px;">Player</td>
-        <td style = "width: 80px;">Score</td>
-        <td style = "width: 60px;">Rank</td>
+        <td style = "width: 170px;"><?=$this->lang->line('Player');?></td>
+        <td style = "width: 80px;"><?=$this->lang->line('Score');?></td>
+        <td style = "width: 60px;"><?=$this->lang->line('Rank');?></td>
     </tr>
     <?php
     if ($users){
         $i = 0;
-        log_message('error','mo7eb dash_ranks $users='.print_r($users,TRUE));
+        log_message('error','mo7eb dash_ranks count($users)='.print_r(count($users),TRUE));
         foreach ($users->result() as $row){
             //log_message('error','mo7eb dash_ranks $row='.print_r($row,TRUE)); 
          ?>
@@ -25,9 +30,9 @@
 <table id = "rank">
     <thead>
         <tr style = "border-bottom:6px solid #68c220;font-size: 13px;font-weight: bold;">
-                <td style = "width: 100px;">Category</td>
-                <td style = "width: 80px;">Score</td>
-                <td style = "width: 50px;">Pos</td>
+                <td style = "width: 100px;"><?=$this->lang->line('Category');?></td>
+                <td style = "width: 80px;"><?=$this->lang->line('Score');?></td>
+                <td style = "width: 50px;"><?=$this->lang->line('Pos');?></td>
         </tr>
     </thead>
     <tbody id = "rank-body">

@@ -1,9 +1,28 @@
 <?php
+$this->lang->load('score',$_SESSION['language']);
                 $scoreboard = $_SESSION [ 'user_data' ];
                 $all_users = $scoreboard ['all'];
                 $top_users = $scoreboard ['top'];
                 //log_message('error','mo7eb scoreboard_ajax $scoreboard[fb_ids]='.  print_r($scoreboard['fb_ids'],TRUE));
 ?>
+<table id="scoreboard_ranks_table" style = "text-align: left; width: 629px;">
+                            <tr style = "height: 45px;">
+                                    <td style = "border-top:8px solid #ffa800; box-shadow: 0 2px 2px -1px gray;">
+                                            <h4>
+                                                    <img class = "arrow" src="<?=base_url()?>/h7-assets/resources/img/main-icons/orange-arrow.png" alt="orange-arrow"><?=$_SESSION['current_category_name'];?>
+                                                    <a href="javascript:void(0);" onclick="scoreboard(<?=$_SESSION['current_category_id']?>, 0);return false;" style = "text-decoration: none; margin-left: 280px;margin-right: 10px">
+                                                            <img style = "height: 25px;" src = "<?=base_url()?>/h7-assets/resources/img/main-icons/friends_icon.png" alt = "friends">
+                                                            <font style = "font-size: 14px"><?=$this->lang->line('FRIENDS');?>  </font>
+                                                    </a>
+                                                    <a href="javascript:void(0);" onclick="scoreboard(<?=$_SESSION['current_category_id']?>, 1);return false;" style = "text-decoration: none;">
+                                                            <img style = "height: 25px;" src = "<?=base_url()?>/h7-assets/resources/img/main-icons/all_icons.png" alt = "all">
+                                                            <font style = "font-size: 14px"><?=$this->lang->line('ALL_PLAYERS');?></font>
+                                                    </a>
+                                            </h4>
+                                    </td>
+                            </tr>
+                            <tr style = "height: 20px;" ></tr>
+</table>
 <div id="ranks_table_div" >
         <?php
     $removedRanks = 0;
@@ -79,10 +98,10 @@
     <!-- RANK TABLE -->
     <table id = "rank-table">
             <tr id = "rank-head">
-                    <td class = "first-col">Rank</td>
-                    <td style = "width: 235px;"><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/profile_icon.png" alt="profile-icon"> Name</td>
-                    <td><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/score_icon2.png" alt="score-icon"> Score</td>
-                    <td>Change</td>
+                    <td class = "first-col"><?=$this->lang->line('Rank');?></td>
+                    <td style = "width: 235px;"><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/profile_icon.png" alt="profile-icon"><?=$this->lang->line('Player');?></td>
+                    <td><img src="<?=base_url()?>/h7-assets/resources/img/main-icons/score_icon2.png" alt="score-icon"><?=$this->lang->line('Score');?></td>
+                    <td><?=$this->lang->line('Change');?></td>
             </tr>
             <?php
             //log_message('error','mo7eb scoreboard_ajax $all='.(($_SESSION['all'])?'TRUE':'FALSE'));
