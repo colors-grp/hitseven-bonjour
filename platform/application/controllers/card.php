@@ -210,8 +210,9 @@ class Card extends CI_Controller {
 			$info['audios'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/audio/');
 			$info['videos'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/video/');
 			$info['games'] = $this->game_model->get_games($cat_id, $card_id);
+			$info['stories'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/story/');
 			
-                        log_message('error','mo7eb card on_load_get_card_info $info='.print_r($info,TRUE));
+           	log_message('error','mo7eb card on_load_get_card_info $info='.print_r($info,TRUE));
 			$this->load->view('ajax/my_collection_view_ajax', $info);
 
 		}else { // User doesn't have any cards in the current category
@@ -247,10 +248,43 @@ class Card extends CI_Controller {
 		$info['audios'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/audio/');
 		$info['videos'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/video/');
 		$info['games'] = $this->game_model->get_games($cat_id, $card_id);
+		$info['stories'] = directory_map('./h7-assets/images/categories/'.$name.'/cards/'.$card_id.'/story/');
 		//log_message('error','mo7eb card get_card_info_mycollection $cat_id='.$cat_id);
                 //log_message('error','mo7eb card get_card_info_mycollection $card_id='.$card_id);
                 //log_message('error','mo7eb card get_card_info_mycollection $info[own_card]='.$info['own_card']);
                 
 		$this->load->view('ajax/my_collection_view_ajax', $info);
+	}
+	
+	function get_next_story_image(){
+	// Get variables sent from caller
+		$currentImagePos = $this->input->post('currentImage');
+		$cat_name = $this->input->post('cat_name');
+		$card_id =  $this->input->post('card_id');
+		//log_message('error','mo7eb card get_next_story_image $currentImagePos='.$currentImagePos.'  $cat_name='.$cat_name.'  $card_id='.$card_id);
+	//Load Directory helper to traverse media in each media item
+		$this->load->helper('directory');
+	// Get stories images
+		$stories = directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card_id.'/story/');
+		//log_message('error','mo7eb card get_next_story_image $stories='.print_r($stories,TRUE));
+	// Return False if current image is last or return image fullname
+		//log_message('error','mo7eb card get_next_story_image returning='.$stories[$currentImagePos + 1]);
+		echo (count($stories) != ($currentImagePos + 1))?$stories[$currentImagePos + 1]:FALSE;
+	}
+	
+	function get_previous_story_image(){
+	// Get variables sent from caller
+		$currentImagePos = $this->input->post('currentImage');
+		$cat_name = $this->input->post('cat_name');
+		$card_id =  $this->input->post('card_id');
+		log_message('error','mo7eb card get_next_story_image $currentImagePos='.$currentImagePos.'  $cat_name='.$cat_name.'  $card_id='.$card_id);
+	//Load Directory helper to traverse media in each media item
+		$this->load->helper('directory');
+	// Get stories images
+		$stories = directory_map('./h7-assets/images/categories/'.$cat_name.'/cards/'.$card_id.'/story/');
+		log_message('error','mo7eb card get_previous_story_image $stories='.print_r($stories,TRUE));
+	// Return False if current image is last or return image fullname
+		//log_message('error','mo7eb card get_next_story_image returning='.$stories[$currentImagePos + 1]);
+		echo (($currentImagePos - 1) != -1)?$stories[$currentImagePos - 1]:FALSE;
 	}
 }

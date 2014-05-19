@@ -5,3 +5,4 @@ $lang['Videos'] = 'Videos';
 $lang['Music'] = 'Music';
 $lang['Media'] = 'Media';
 $lang['Games'] = 'Games';
+$lang['Story'] = 'Story';

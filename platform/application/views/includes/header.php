@@ -36,7 +36,14 @@
 <link rel="stylesheet"
 	href="<?= $this->config->item('platform_url');?>assets/js/simplemodal/css/basic.css">
 <!-- End of Simple Modal -->
-    
+
+<!-- FULLSCREEN Plugin -->
+<script type='text/javascript'
+	src="<?= $this->config->item('platform_url');?>h7-assets/resources/js/jquery.fullscreen-min.js">
+</script>
+<!-- End of FULLSCREEN Plugin -->
+
+
 <script>
 	var cur_game_type = "";
 	var game_started = false;

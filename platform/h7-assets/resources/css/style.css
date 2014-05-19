@@ -468,6 +468,13 @@ hr{
 	margin-bottom: 45px;
 }
 
+#card-story{
+	background-color: white;
+	width: 410px;
+	position: relative;
+	margin-bottom: 45px;
+}
+
 .card-elements{
 	position: relative;
 	top: -193px;
@@ -856,8 +863,14 @@ input[type="radio"]:checked + label {
 
 .list-trade-button{
    z-index: 1;
-    position: relative;
-    top: -95px;
-    left: 16.5px;
-    width: 52px; 
+   position: relative;
+   top: -95px;
+   left: 16.5px;
+   width: 52px; 
+}
+
+#close-popup-button {
+	position: relative;
+	left: 127px;
+	top: -38px;
 }

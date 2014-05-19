@@ -1,10 +1,11 @@
 
 <div id="display_img" style="display: none;" align = "center">
 	<div class="popup-container">
-		<div id="game-content">
+		<div id="game-content"> 
 			<img id="img_id" src="">
 		</div>
-		<div id="right-bar">
+		<div id="right-bar"> 
+		<a href="" onclick=""><img id="close-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
 			<table style="margin-top: 5px;">
 				<tr>
 					<td>
@@ -24,7 +25,7 @@
 			<h5 style = "text-align: left;">
 				<img
 					src="<?=base_url()?>h7-assets/resources/img/main-icons/green-arrow.png"
-					style="margin-right: 5px;">Image Name
+					style="margin-right: 5px;"><a href="#" onclick="getElementReadyForFullScreenMode('#display_img')" ><?=$card_name?></a>
 			</h5>
 		</div>
 	</div>
@@ -53,6 +54,10 @@ function display_image(img_src) {
 		<?php }else  {?>
 			alert_warning('Buy card ya 7abeeby l awl :P');
 		<?php }?>
+}
+function getElementReadyForFullScreenMode(elementName){
+	$(elementName).width(screen.width).height(screen.height);
+	$(elementName).toggleFullScreen();
 }
 
 </script>

@@ -19,6 +19,10 @@ $this->lang->load('card',$_SESSION['language']);
 	<?php
 	$this->load->view('popups/game_popup');
 	?>
+	<!-- 	Load the Story Popup ... -->
+	<?php
+	$this->load->view('popups/story_popup');
+	?>
 	
 
 <?php if ($images != false) { ?>
@@ -145,5 +149,28 @@ $this->lang->load('card',$_SESSION['language']);
             </td>
             <?php }?>
         </tr>
+</table>
+<?php } if ($stories != false) { ?>
+<table id="card-game">
+	<tr>
+		<td colspan="4" style="border-bottom: 2px solid #68c220;"><img width="30" height="30"
+			src="<?=base_url()?>h7-assets/resources/img/main-icons/cards_story.png"
+			style="margin-right: 7px; margin-left: 7px; margin-bottom: 7px;" /><?=$this->lang->line('Story');?>
+		</td>
+	</tr>
+	<tr align="center">
+		<!--  <td id='previous-image-td'><a href='' onclick='getPrevImg(0);'><img alt="previous image" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_left_icon.png"></a></td> 
+		-->
+		<td class="photo-padding">
+			<a href="javascript:void(0)"
+				onclick="play_story('<?=base_url();?>h7-assets/images/categories/<?=$cat_name;?>/cards/<?=$card_id;?>/story/<?=$stories[0];?>');">
+					<img
+					src="<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?=$card_id?>/story/<?=$stories[0]?>"
+					border="0" class="img-circle" style="width: 40px; height: 40px;">
+			</a>
+		</td>
+		<!-- <td id='next-image-td'><a href='' onclick='getNextImg(0);'><img alt="next image" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_right_icon.png"></a></td>
+		-->
+	</tr>
 </table>
 <?php } ?>
