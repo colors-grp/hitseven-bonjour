@@ -6,6 +6,8 @@
 			</video>
 		</div>
 		<div id="right-bar">
+                    <a href="javascript:void(0);" onclick="toggleFullScreen('#show_vid');"><img id="fullscreen-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
+                    <a href="javascript:void(0);" onclick="closeModal('#show_vid');"><img id="close-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
 			<table style="margin-top: 5px;">
 				<tr>
 					<td>

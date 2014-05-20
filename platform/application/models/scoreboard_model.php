@@ -20,6 +20,7 @@ class Scoreboard_model extends CI_Model {
         $this->db->from('category_rank');
         $this->db->where('category_id', $cat_id);
         $this->db->join('rank', 'rank.id = category_rank.rank_id');
+        $this->db->order_by('rank_id','ASC');
         $query = $this->db->get();
         if ($query != FALSE && $query->num_rows() > 0)
                 return $query;

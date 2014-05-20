@@ -870,7 +870,13 @@ input[type="radio"]:checked + label {
 }
 
 #close-popup-button {
-	position: relative;
-	left: 127px;
-	top: -38px;
+    position: relative;
+    left: 111px;
+    top: -33px;
+}
+
+#fullscreen-popup-button {
+    position: relative;
+    left: 111px;
+    top: -33px;
 }

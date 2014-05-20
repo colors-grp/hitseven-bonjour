@@ -73,10 +73,15 @@ $this->lang->load('card',$_SESSION['language']);
     for($i=0;$i<3&&$pos<count($videos);$i++,$pos++,$counter++) { ?>
 		<td class="photo-padding">
 			<a href="javascript:void(0)"
-				onclick="display_image('<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/image/<?= $videos[$pos]?>')">
+                                           
+				onclick="show_video('<?=base_url();?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/video/<?= $videos[$pos]?>')">
 					<img
-					src="<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/image/<?= $videos[$pos]?>"
-					border="0" class="img-circle" style="width: 40px; height: 40px;">
+                                            <?php if(file_exists(base_url()."h7-assets/images/categories/".$cat_name."/cards/".$card_id."/video/".$videos[$pos])){ ?>
+                                                src="<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/video/<?= $videos[$pos]?>"
+                                            <?php } else { ?>
+                                                src="<?=base_url()?>h7-assets/resources/img/main-icons/cards_video.png"
+                                            <?php } ?>
+                                            border="0" class="img-circle" style="width: 40px; height: 40px;">
 			</a>
 		
 		</td>
@@ -106,9 +111,14 @@ $this->lang->load('card',$_SESSION['language']);
     for($i=0;$i<3&&$pos<count($audios);$i++,$pos++,$counter++) { ?>
 		<td class="photo-padding">
 			<a href="javascript:void(0)"
-				onclick="display_image('<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/image/<?= $audios[$pos]?>')">
+				onclick="play_audio('<?=base_url();?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/audio/<?=$audios[$pos];?>')">
 					<img
-					src="<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/image/<?= $audios[$pos]?>"
+                                            <?php if(file_exists(base_url()."h7-assets/images/categories/".$cat_name."/cards/".$card_id."/audio/".$audios[$pos])){ ?>
+                                                src="<?= base_url(); ?>h7-assets/images/categories/<?=$cat_name?>/cards/<?= $card_id?>/audio/<?= $audios[$pos]?>"
+                                            <?php } else { ?>
+                                                src="<?=base_url()?>h7-assets/resources/img/main-icons/cards_music.png"
+                                            <?php } ?>
+					
 					border="0" class="img-circle" style="width: 40px; height: 40px;">
 			</a>
 		
@@ -159,8 +169,6 @@ $this->lang->load('card',$_SESSION['language']);
 		</td>
 	</tr>
 	<tr align="center">
-		<!--  <td id='previous-image-td'><a href='' onclick='getPrevImg(0);'><img alt="previous image" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_left_icon.png"></a></td> 
-		-->
 		<td class="photo-padding">
 			<a href="javascript:void(0)"
 				onclick="play_story('<?=base_url();?>h7-assets/images/categories/<?=$cat_name;?>/cards/<?=$card_id;?>/story/<?=$stories[0];?>');">
@@ -169,8 +177,6 @@ $this->lang->load('card',$_SESSION['language']);
 					border="0" class="img-circle" style="width: 40px; height: 40px;">
 			</a>
 		</td>
-		<!-- <td id='next-image-td'><a href='' onclick='getNextImg(0);'><img alt="next image" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_right_icon.png"></a></td>
-		-->
 	</tr>
 </table>
 <?php } ?>

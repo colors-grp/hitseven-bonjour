@@ -5,9 +5,11 @@
 			<a onclick="getElementReadyForFullScreenMode('#story_id')" >
 				<img id= "story_id" width="400px" height="400px" align = "center" style = "margin: 50px;" src="" >
 			</a>
-			<a href='javascript:void(0)' id="next-image" onclick='get_next_story_image(0);'><img alt="next" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_right_icon.png"></a>
+			<a href='javascript:void(0);' id="next-image" onclick='get_next_story_image(0);'><img alt="next" src="<?=base_url()?>h7-assets/resources/img/main-icons/bigarrow_right_icon.png"></a>
 		</div>
 		<div id="right-bar">
+                    <a href="javascript:void(0);" onclick="toggleFullScreen('#play_story');"><img id="fullscreen-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
+                    <a href="javascript:void(0);" onclick="closeModal('#play_story');"><img id="close-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
 			<table style="margin-top: 5px;">
 				<tr>
 					<td>
@@ -60,10 +62,6 @@ function play_story(story_src) {
 		alert('Buy card ya 7abeeby l awl :P');ss
 	<?php }?>
 }
-function getElementReadyForFullScreenMode(elementName){
-	$(elementName).width(screen.width).height(screen.height);
-	$(elementName).toggleFullScreen();
-}
 function get_next_story_image(currentImage){
 	$("#previous-image").css("visibility", 'visible');
 	ajaxpage = "<?=base_url() ?>index.php?/card/get_next_story_image";
@@ -99,7 +97,7 @@ function get_previous_story_image(currentImage){// Get previous story image from
                 	$("#story_id").attr("src","<?=base_url();?>h7-assets/images/categories/<?=$cat_name?>/cards/<?=$card_id?>/story/"+data);
                	// Change next onlclick calling function to call next image
                 	$("#next-image").attr("onclick","get_next_story_image(" + (currentImage - 1) + ")" );
-                // Change previous onlclick calling function to call previous image
+                // Change next onlclick calling function to call previous image
                 	$("#previous-image").attr("onclick","get_previous_story_image(" + (currentImage - 1) + ")" );
                 }
             });

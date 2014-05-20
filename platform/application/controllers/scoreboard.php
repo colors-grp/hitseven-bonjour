@@ -153,14 +153,14 @@ class Scoreboard extends CI_Controller {
                     $scoreboard = $this->scoreboard_model->get_scoreboard($cat_id, $cat_name , $limit);
                 //Get all ranks according to ranks in the selected category
                     $i = 0;
-                    foreach ( $scoreboard ['all']->result () as $row ) {
-                            $ret ['all'] [$i] = $row;
+                    foreach ( $scoreboard ['all']->result() as $row ) {
+                            $ret ['all'] [$i] = get_object_vars($row);
                             $i ++;
                     }
                     //Get ranks on top of each category
                     $i = 0;
-                    foreach ( $scoreboard ['top']->result () as $row ) {
-                            $ret['top'][$i] = $row;
+                    foreach ( $scoreboard ['top']->result() as $row ) {
+                            $ret['top'][$i] = get_object_vars($row);
                             $i ++;
                     }
                     //Get Top users facebook ids according to the number of ranks in the category
@@ -174,7 +174,7 @@ class Scoreboard extends CI_Controller {
                     //Get Top users according to the number of ranks in the category
                     $i = 0;
                     foreach ( $scoreboard ['top_users']->result() as $row ) {
-                            $ret['top_users'][$i] = $row;
+                            $ret['top_users'][$i] = get_object_vars($row);
                             $i ++;
                     }
                 } else {// View Friends recordes
@@ -222,7 +222,7 @@ class Scoreboard extends CI_Controller {
                         //Get ranks on top of each category
                         $i = 0;
                         foreach ( $scoreboard ['top']->result () as $row ) {
-                                $ret['top'][$i] = $row;
+                                $ret['top'][$i] = get_object_vars($row);
                                 $i ++;
                         }
                     }

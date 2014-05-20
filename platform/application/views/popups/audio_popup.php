@@ -4,6 +4,8 @@
 			<embed id= "audio_id" align = "center" style = "margin-top: 50px;" src="">
 		</div>
 		<div id="right-bar">
+                    <a href="javascript:void(0);" onclick="toggleFullScreen('#play_aud');"><img id="fullscreen-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
+                    <a href="javascript:void(0);" onclick="closeModal('#play_aud');"><img id="close-popup-button" src="<?=base_url()?>h7-assets/resources/img/main-icons/score_icon2.png"></a>
 			<table style="margin-top: 5px;">
 				<tr>
 					<td>
